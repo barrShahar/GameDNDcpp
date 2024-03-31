@@ -8,7 +8,8 @@ Game class:
 The game initializes the networking subsystem (m_net) and the dungeon (m_dungeon). It continuously waits for connections from clients, greets them, registers them as players in the dungeon, and executes game logic through a GameExecuter instance, which implements the state machine design pattern. The Play() function serves as the entry point for the game execution. It initializes input and output streams (cinReader and coutWriter) via the Command design pattern and starts general gameplay.
 The action folders implement strategy design pattern.
 
-├── DND_main  // In DND_main folder: all code beside DND_MAIN_V02.cpp wrote by someone else
+```
+├── DND_main  // DND_main folder: all code beside DND_MAIN_V02.cpp wrote by someone else
 │   ├── header
 │   │   ├── AsyncNetworkHandler.h
 │   │   ├── BlockingQueueMT.h
@@ -111,3 +112,4 @@ The action folders implement strategy design pattern.
 │   │   │   ├── ...
 │   │   └── spdlog
 │   │       ├── ...
+```
