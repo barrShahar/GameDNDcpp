@@ -14,9 +14,9 @@
 namespace experis
 {
 experis::GameExecuter::GameExecuter(Writer & a_writer,
-									Reader & a_reader,
-									Dungeon_mt & a_dungeon,
-									Player & a_player)
+					Reader & a_reader,
+					Dungeon_mt & a_dungeon,
+					Player & a_player)
 	: m_writer { a_writer }
 	, m_reader { a_reader }
 	, m_dungeon { a_dungeon }
