@@ -1,9 +1,9 @@
 # GameDNDcpp
 
-DND_main:
+**DND_main:**
 sets up a server to handle multiple clients concurrently using threads. The main() function initializes a Game instance and spawns multiple threads, each running the ServerPlay() function of the Game instance to handle client interactions.
 
-DND_staticLib: 
+**DND_staticLib:**
 Game class:
 The game initializes the networking subsystem (m_net) and the dungeon (m_dungeon). It continuously waits for connections from clients, greets them, registers them as players in the dungeon, and executes game logic through a GameExecuter instance, which implements the state machine design pattern. The Play() function serves as the entry point for the game execution. It initializes input and output streams (cinReader and coutWriter) via the Command design pattern and starts general gameplay.
 The action folders implement strategy design pattern.
@@ -113,9 +113,15 @@ The action folders implement strategy design pattern.
 │   │   └── spdlog
 │   │       ├── ...
 ```
+# UML
+
+
 <img width="785" alt="image" src="https://github.com/barrShahar/GameDNDcpp/assets/59974036/e68a4af4-48d5-417a-9ff3-48ec23970753">
 
 <img width="786" alt="image" src="https://github.com/barrShahar/GameDNDcpp/assets/59974036/90db48ae-9f3b-4ed5-8c69-c88057524fca">
 
+# Example
+
+![1708369576001](https://github.com/barrShahar/GameDNDcpp/assets/59974036/9729f760-e8cf-4b64-9aac-9b3c02e55bfe)
 
 
