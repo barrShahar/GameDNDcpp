@@ -4,15 +4,6 @@
 #include "Player.h"
 #include "GameExecuter.h"
 
-//#include "Action.h"
-//#include "Right.h"
-//#include "Left.h"
-//#include "Walk2.h"
-//#include "PrintDirection.h"
-//#include "Talk.h"
-//#include "Shout.h"
-//#include "Look.h"
-
 #include "CoutWriter.h"
 #include "NetWriter.h"
 
