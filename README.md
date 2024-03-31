@@ -113,3 +113,9 @@ The action folders implement strategy design pattern.
 │   │   └── spdlog
 │   │       ├── ...
 ```
+<img width="785" alt="image" src="https://github.com/barrShahar/GameDNDcpp/assets/59974036/e68a4af4-48d5-417a-9ff3-48ec23970753">
+
+<img width="786" alt="image" src="https://github.com/barrShahar/GameDNDcpp/assets/59974036/90db48ae-9f3b-4ed5-8c69-c88057524fca">
+
+
+
