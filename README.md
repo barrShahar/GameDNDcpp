@@ -5,7 +5,7 @@ sets up a server to handle multiple clients concurrently using threads. The main
 
 **DND_staticLib:**
 Game class:
-The game initializes the networking subsystem (m_net) and the dungeon (m_dungeon). It continuously waits for connections from clients, greets them, registers them as players in the dungeon, and executes game logic through a GameExecuter instance, which implements the state machine design pattern. The Play() function serves as the entry point for the game execution. It initializes input and output streams (cinReader and coutWriter) according to the Command design pattern and starts general gameplay.
+The game initializes the networking subsystem (SimpleNetMT) and the dungeon (Dungeon_mt). It continuously waits for connections from clients, greets them, registers them as players in the dungeon, and executes game logic through a GameExecuter instance, which implements the state machine design pattern. The Play() function serves as the entry point for the game execution. It initializes input and output streams (cinReader and coutWriter) according to the Command design pattern and starts general gameplay.
 
 ```
 ├── DND_main  // DND_main folder: all code beside DND_MAIN_V02.cpp wrote by someone else
