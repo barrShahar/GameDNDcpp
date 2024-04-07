@@ -57,7 +57,6 @@ void Game::ServerPlay()
 		}
 		catch (const simplenet::SimpleNetMT::ConnectionClosed&)
 		{
-			// unregister player!
 			m_dungeon.UnregisterPlayer(player, player.GetRoomNumber());
 			std::cout << "CLOSED\n";
 		}
@@ -90,11 +89,5 @@ void experis::Game::Play()
 	GeneralPlay(coutWrtier, cinReader);
 }
 
-/*
-size_t Game::Walk(const size_t a_roomNum,const Direction a_direction) const
-{
-	return m_dungeon.Walk(a_roomNum, a_direction);
-}
-*/
 
 } // experis
