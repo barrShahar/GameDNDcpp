@@ -2,7 +2,6 @@
 #include "Action.h"
 namespace experis
 {
-
 class Walk : public Action
 {
 public:
