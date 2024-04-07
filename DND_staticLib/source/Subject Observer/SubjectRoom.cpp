@@ -40,7 +40,6 @@ void experis::SubjectRoom_mt::Unregister(Player& a_player)
 void experis::SubjectRoom_mt::NotifyAll(const std::string& a_message)
 {
 	std::pair< std::string, std::unique_ptr<ObserverPlayer_mt>> f;
-	// std::lock_guard<std::mutex> lock(m_roomMutex); 
 	for (std::pair<std::string const, std::unique_ptr<ObserverPlayer_mt>>& pair : m_observersMap)
 	{
 		 pair.second.get()->Notify(a_message);
