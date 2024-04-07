@@ -43,13 +43,4 @@ enum class STATE // Do not change order!! GameExecuter depends on it
     ATTACK,
     EXIT
 };
-
-/* ACTION in cstring
-#define GENERATE_ENUM(ENUM) ENUM,
-
-static const char *ACTION_STRING[] =
-{
-    FOREACH_ACTION(GENERATE_STRING)
-};
-*/
 }
