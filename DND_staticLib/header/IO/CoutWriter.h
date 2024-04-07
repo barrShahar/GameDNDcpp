@@ -3,7 +3,6 @@
 #include <iostream>
 namespace experis
 {
-
 class CoutWriter : public Writer
 {
 public:
