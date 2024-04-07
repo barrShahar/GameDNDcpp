@@ -4,8 +4,6 @@
 
 
 #include <vector>
-//#include <random>
-//#include <queue>
 
 namespace experis
 {
@@ -37,9 +35,6 @@ Number Dungeon_mt::Walk_mt(Number a_roomNumber, Direction a_direction)
 		}
 		// Getting alias to the new room number for readability
 		const Number newRoomNumber = room.GetNextDoorRoomNumber(a_direction);
-
-		// Notify other players that reside in newRoom
-		// RoomMessage(newRoomNumber, a_name + " has entered the room\n");
 
 		// Returns new room number
 		return newRoomNumber;
@@ -92,11 +87,10 @@ void Dungeon_mt::UnregisterPlayer(Player& a_player, Number a_roomNumber)
 }
 
 AttackPlayerResponse Dungeon_mt::AttackPlayer(Number a_roomNumber, 
-											  const std::string& attackerName, 
-											  const std::string& a_attackedName, 
-											  Number a_dmg, Number a_attackLifePoints)
+					      const std::string& attackerName, 
+					      const std::string& a_attackedName, 
+					      Number a_dmg, Number a_attackLifePoints)
 {
-	// TODO: Find player through subject and attack him
 	Room& room = m_rooms.at(a_roomNumber);
 	AttackPlayerResponse info = room.AttackPlayer(a_attackedName, a_dmg);
 	Number lifePoints = (a_attackLifePoints > info.GetDamageToThisPlayer()) ?
@@ -142,41 +136,6 @@ const experis::Rooms Dungeon_mt::CreateDungeon() const
 		Room { Number(8), make_pair(false,Number(-1)),make_pair(true,Number(6)), make_pair(true,Number(3)), make_pair(false, Number(-1)), true, true },
 	};
 	return rooms;
-	/*
-		std::queue<std::unique_ptr<Room>> unexploredRooms;
-	Number roomNum = 0;
-	// Create First room
-	unexploredRooms.push(std::make_unique<Room>
-	(
-		roomNum, std::make_pair(true, ++roomNum), 
-		std::make_pair(false, -1), 
-		std::make_pair(false, -1), 
-		std::make_pair(false, -1), 
-		false, true
-	)
-	);
-
-	while (!unexploredRooms.empty())
-	{
-		// Dequeue room
-		std::unique_ptr<Room>& roomToExplore = unexploredRooms.front();
-
-		// For every open door in room, create another room:
-		for (Room::Iterator it = roomToExplore->begin(); it != roomToExplore->end(); ++it)
-		{
-			if ((*it).IsDoor())
-			{
-				unexploredRooms.push(CreateRoom(++roomNum));
-			}
-		}
-
-		// push room to vector
-		rooms.push_back(std::move(unexploredRooms.front()));
-		unexploredRooms.pop();
-	}
-
-	return std::move(rooms);
-	*/
 }
 
 Number AttackDragonResponse::GetDragonRemainingLifePoints()
@@ -194,6 +153,7 @@ Number AttackDragonResponse::GetDamageToPlayer() const
 
 /*
 * 
+// Working on randon daungeon allocator
 std::pair<bool,Number> getRandomBool_mt(double a_probability, Number& a_num)
 {
 	bool isDoor = getRandomBool_mt(a_probability);
