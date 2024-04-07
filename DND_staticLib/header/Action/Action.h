@@ -6,7 +6,6 @@
 
 namespace experis
 {
-// Don't forget to const :D
 class Action
 {
 public:
