@@ -21,7 +21,7 @@ The game initializes the networking subsystem (SimpleNetMT) and the dungeon (Dun
 │       └── UrlPathReader.cpp
 ├── DND_staticLib
 │   ├── header
-│   │   ├── Action  // Implementing Strategy Design Pattern
+│   │   ├── Action 
 │   │   │   ├── Action.h
 │   │   │   ├── ActionResponse.h
 │   │   │   ├── Attack.h
@@ -65,7 +65,7 @@ The game initializes the networking subsystem (SimpleNetMT) and the dungeon (Dun
 │   │       ├── SubjectBase.h
 │   │       └── SubjectRoom.h
 │   └── source
-│       ├── Action  // Implementing Strategy Design Pattern
+│       ├── Action  
 │       │   ├── Action.cpp
 │       │   ├── ActionResponse.cpp
 │       │   ├── Attack.cpp
