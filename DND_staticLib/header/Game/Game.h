@@ -32,12 +32,9 @@ public:
     
 private:
 
-    // size_t Walk(const size_t a_roomNum, const Direction a_direction) const;
-    //void DrawRoom(Writer & a_writer, const Player& a_player);
     Dungeon_mt m_dungeon;
     simplenet::SimpleNetMT m_net;
 
 
-    // std::unordered_map<std::string, std::unique_ptr<Action>> m_afterActions;
 };
 }  // namespace experis
