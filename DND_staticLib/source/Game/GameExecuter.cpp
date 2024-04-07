@@ -44,10 +44,6 @@ experis::GameExecuter::GameExecuter(Writer & a_writer,
 	m_actions[COMMAND::take] = std::make_unique<Take>();
 	m_actions[COMMAND::attack] = std::make_unique<Attack>();
 
-	//m_actions["right"] = std::make_unique<Right>();
-	//m_actions["walk"] = std::make_unique<Walk2>();
-	//m_actions["shout"] = std::make_unique<Shout>();
-	//m_actions["look"] = std::make_unique<Look>();
 	m_commandState[COMMAND::left] = STATE::STRING_ACT;
 	m_commandState[COMMAND::right] = STATE::STRING_ACT;
 	m_commandState[COMMAND::walk] = STATE::STRING_ACT;
@@ -79,8 +75,7 @@ STATE experis::GameExecuter::StateInit()
 	return STATE::WAITING_FOR_INPUT;
 }
 
-// Parsing command from user and return new state if the command exist, otherwise
-// return the same state;
+// Parsing command from user and return new state if the command exist, otherwise return the same state;
 STATE GameExecuter::WaitingForInput()
 {
 	std::string untrustedInput = m_reader.ReadLine();
@@ -96,11 +91,10 @@ STATE GameExecuter::WaitingForInput()
 	return STATE::WAITING_FOR_INPUT;
 }
 
-STATE GameExecuter::StringCommand()
+STATE GameExecuter::StringCommand() // Execute command and get reported back
 {
 	assert(m_currCommand.has_value());
-	// activate Action function the returns a poiner to ActionResponse Data 	
-	std::unique_ptr<ActionResponse> respone = m_actions.at(m_currCommand.value()).get()->Act(m_dungeon, m_player);
+	std::unique_ptr<ActionResponse> response = m_actions.at(m_currCommand.value()).get()->Act(m_dungeon, m_player);
 
 	// reset current command
 	m_currCommand = std::nullopt;
@@ -108,9 +102,9 @@ STATE GameExecuter::StringCommand()
 	m_dungeon.DrawRoom(m_writer, m_player.GetRoomNumber(), m_player.GetDirection());
 
 	// Output the data
-	if (respone)
+	if (response)
 	{
-		m_writer.Write(respone.get()->GetResponse().first.get());
+		m_writer.Write(response.get()->GetResponse().first.get());
 		m_writer.Write('\n');
 	}
 
@@ -142,8 +136,6 @@ STATE GameExecuter::Help()
 
 STATE GameExecuter::AttackHandler()
 {
-	// Who do you want to attack?
-	
 	if (m_dungeon.IsMonsterInTheRoom(m_player.GetRoomNumber()))
 	{
 		m_player.SetPlayerGameArgument("dragon");
