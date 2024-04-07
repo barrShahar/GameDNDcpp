@@ -3,7 +3,6 @@
 
 namespace experis
 {
-// Sends a messages to all players in the room
 class Take : public Action
 {
 public:
