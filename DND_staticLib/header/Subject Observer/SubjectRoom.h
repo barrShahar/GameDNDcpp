@@ -25,7 +25,6 @@ public:
     virtual void NotifyAll(const std::string& a_message) override;
     AttackPlayerResponse AttackPlayer(const std::string& a_playerToAttack, Number a_dmg);
 private:
-    // std::vector<std::unique_ptr<ObserverPlayer_mt>> m_observers;
     Map m_observersMap;
     mutable std::mutex m_roomMutex;
 };
